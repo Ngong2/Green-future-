@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { LayoutDashboard, Leaf, LogOut, Menu, X, FileText } from 'lucide-react';
 
@@ -7,6 +7,13 @@ const AdminNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setIsOpen(false);
+    logout();
+    navigate('/admin', { replace: true });
+  };
 
   const links = [
     { to: '/admin', label: 'Dashboard', icon: LayoutDashboard },
@@ -54,7 +61,7 @@ const AdminNavbar = () => {
           </span>
           <button
             type="button"
-            onClick={logout}
+            onClick={handleLogout}
             className="inline-flex items-center gap-2 rounded-lg border border-green-700 px-3 py-2 text-sm font-semibold text-white transition-colors hover:border-red-400 hover:bg-red-600"
           >
             <LogOut className="h-4 w-4" />
@@ -88,7 +95,7 @@ const AdminNavbar = () => {
               </span>
               <button
                 type="button"
-                onClick={logout}
+                onClick={handleLogout}
                 className="inline-flex items-center gap-2 rounded-lg border border-green-700 px-3 py-2 text-sm font-semibold text-white transition-colors hover:border-red-400 hover:bg-red-600"
               >
                 <LogOut className="h-4 w-4" />

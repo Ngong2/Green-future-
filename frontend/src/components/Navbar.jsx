@@ -38,8 +38,6 @@ const Navbar = () => {
     setShowDropdown(false);
   }, [location]);
 
-  // Always render the public Navbar (use single navbar for both public and admin)
-
   // Agricultural color palette
   const colors = {
     soil: '#5C4E3D',      // Rich soil brown

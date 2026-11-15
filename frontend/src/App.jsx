@@ -26,6 +26,7 @@ function App() {
   const { loading, isAuthenticated } = useAuth();
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
+  const showAdminNavbar = isAdminRoute && isAuthenticated;
 
   if (loading) {
     return (
@@ -46,9 +47,7 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {isAdminRoute
-        ? isAuthenticated && <AdminNavbar />
-        : <Navbar />}
+      {isAdminRoute ? (showAdminNavbar && <AdminNavbar />) : <Navbar />}
       <main className="grow">
         <Routes>
           {/* Public Routes */}

@@ -12,7 +12,6 @@ import {
   ClockIcon
 } from '@heroicons/react/24/outline';
 import { format } from 'date-fns';
-// Use the single shared Navbar component instead of AdminNavbar
 
 const AdminDashboard = () => {
   const { user } = useAuth();
