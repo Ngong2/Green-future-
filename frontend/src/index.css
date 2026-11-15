@@ -36,6 +36,18 @@
   .card {
     @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300;
   }
+
+  .post-content-editor .ql-editor {
+    min-height: 18rem;
+  }
+
+  .post-content-editor .ql-toolbar.ql-snow {
+    @apply rounded-t-xl border-slate-300;
+  }
+
+  .post-content-editor .ql-container.ql-snow {
+    @apply rounded-b-xl border-slate-300;
+  }
 }
 
 /* Animations */

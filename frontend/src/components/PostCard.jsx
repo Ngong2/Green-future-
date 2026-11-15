@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { CalendarIcon, UserIcon, EyeIcon } from '@heroicons/react/24/outline';
+import { API_ORIGIN } from '../services/api';
 
 const PostCard = ({ post }) => {
   const getCategoryColor = (category) => {
@@ -19,7 +20,7 @@ const PostCard = ({ post }) => {
     <article className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
       <Link to={`/posts/${post._id}`}>
         <img
-          src={post.image ? `http://localhost:5000${post.image}` : 'https://via.placeholder.com/600x400?text=No+Image'}
+          src={post.image ? `${API_ORIGIN}${post.image}` : 'https://via.placeholder.com/600x400?text=No+Image'}
           alt={post.title}
           className="w-full h-48 object-cover"
         />

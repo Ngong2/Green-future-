@@ -10,6 +10,7 @@ import {
   ShareIcon 
 } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
+import { API_ORIGIN } from '../services/api';
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -83,7 +84,7 @@ const PostDetail = () => {
       {/* HERO IMAGE */}
       <div className="relative min-h-72 overflow-hidden md:min-h-80">
         <img
-          src={featuredImage ? `http://localhost:5000${featuredImage}` : 'https://via.placeholder.com/1200x600?text=No+Image'}
+          src={featuredImage ? `${API_ORIGIN}${featuredImage}` : 'https://via.placeholder.com/1200x600?text=No+Image'}
           alt={post.title}
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -152,7 +153,7 @@ const PostDetail = () => {
                   {postImages.slice(1).map((image, index) => (
                     <img
                       key={image}
-                      src={`http://localhost:5000${image}`}
+                      src={`${API_ORIGIN}${image}`}
                       alt={`${post.title} image ${index + 2}`}
                       className="h-64 w-full rounded-lg object-cover"
                     />

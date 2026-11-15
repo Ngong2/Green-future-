@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { postService } from '../../services/api';
 import { PhotoIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import ReactQuill from 'react-quill-new';
+import 'react-quill-new/dist/quill.snow.css';
 import toast from 'react-hot-toast';
 
 const CreatePost = () => {
@@ -102,6 +104,12 @@ const CreatePost = () => {
 
   const handleSubmit = async (e, publishStatus) => {
     e.preventDefault();
+
+    const contentText = new DOMParser().parseFromString(formData.content, 'text/html').body.textContent?.trim();
+    if (!contentText) {
+      toast.error('Please enter post content');
+      return;
+    }
 
     if (formData.images.length === 0) {
       toast.error('Please upload at least one image');
@@ -249,14 +257,12 @@ const CreatePost = () => {
           {/* Content */}
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <label htmlFor="content" className="mb-2 block text-sm font-semibold text-slate-800">Content *</label>
-            <textarea
-              id="content"
-              name="content"
-              required
+            <ReactQuill
+              theme="snow"
               value={formData.content}
-              onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-              className="h-72 w-full resize-y rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-green-600 focus:ring-4 focus:ring-green-100"
-              placeholder="Write your post content here..."
+              onChange={(content) => setFormData((prev) => ({ ...prev, content }))}
+              className="post-content-editor"
+              aria-label="Post content"
             />
           </div>
 

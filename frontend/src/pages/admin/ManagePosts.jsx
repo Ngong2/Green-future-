@@ -10,6 +10,7 @@ import {
   PlusIcon 
 } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
+import { API_ORIGIN } from '../../services/api';
 
 const ManagePosts = () => {
   const [posts, setPosts] = useState([]);
@@ -178,7 +179,7 @@ const ManagePosts = () => {
                           <div className="flex items-center">
                             {post.image && (
                               <img
-                                src={`http://localhost:5000${post.image}`}
+                                src={`${API_ORIGIN}${post.image}`}
                                 alt={post.title}
                                 className="h-10 w-10 rounded object-cover mr-3"
                                 onError={(e) => {

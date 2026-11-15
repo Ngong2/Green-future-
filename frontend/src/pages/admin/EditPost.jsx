@@ -3,7 +3,10 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { postService } from '../../services/api';
 import { PhotoIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import ReactQuill from 'react-quill-new';
+import 'react-quill-new/dist/quill.snow.css';
 import toast from 'react-hot-toast';
+import { API_ORIGIN } from '../../services/api';
 const EditPost = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -128,6 +131,12 @@ const EditPost = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const contentText = new DOMParser().parseFromString(formData.content, 'text/html').body.textContent?.trim();
+    if (!contentText) {
+      toast.error('Please enter post content');
+      return;
+    }
+
     setSaving(true);
 
     try {
@@ -212,7 +221,7 @@ const EditPost = () => {
               {imagePreview || existingImage ? (
                 <div className="relative">
                   <img
-                    src={imagePreview || `http://localhost:5000${existingImage}`}
+                    src={imagePreview || `${API_ORIGIN}${existingImage}`}
                     alt="Preview"
                     className="max-h-64 rounded-lg"
                   />
@@ -282,14 +291,12 @@ const EditPost = () => {
             <label htmlFor="content" className="mb-2 block text-sm font-semibold text-slate-800">
               Content *
             </label>
-            <textarea
-              id="content"
-              name="content"
-              required
+            <ReactQuill
+              theme="snow"
               value={formData.content}
-              onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-              className="h-72 w-full resize-y rounded-xl border border-slate-300 px-4 py-3 outline-none transition focus:border-green-600 focus:ring-4 focus:ring-green-100"
-              placeholder="Write your post content here..."
+              onChange={(content) => setFormData((prev) => ({ ...prev, content }))}
+              className="post-content-editor"
+              aria-label="Post content"
             />
           </div>
 
