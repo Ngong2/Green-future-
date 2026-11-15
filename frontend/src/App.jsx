@@ -38,7 +38,7 @@ function App() {
               <span className="text-2xl">🌱</span>
             </div>
           </div>
-          <p className="text-gray-600 animate-pulse">Loading Green Future and Sustainability Initiative...</p>
+          <p className="text-gray-600 animate-pulse">Loading Green Future and Sustainability Project...</p>
         </div>
       </div>
     );

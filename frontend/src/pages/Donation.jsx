@@ -8,8 +8,6 @@ import {
   Globe,
   Users,
   TreePine,
-  Award,
-  CheckCircle,
   ArrowRight,
   Leaf
 } from 'lucide-react';
@@ -53,21 +51,27 @@ const Donation = () => {
   const impactStats = [
     {
       icon: <TreePine className="w-8 h-8" />,
-      number: "15,000+",
-      label: "Trees from $25 donation",
-      description: "Plant drought-resistant trees"
+      number: "4,700",
+      label: "Trees planted",
+      description: "Trees planted through project activities in Kakuma"
     },
     {
       icon: <Users className="w-8 h-8" />,
-      number: "500+",
-      label: "Families fed monthly",
-      description: "Support community gardens"
+      number: "17",
+      label: "Volunteers",
+      description: "People volunteering with the project"
     },
     {
-      icon: <Award className="w-8 h-8" />,
-      number: "1,500+",
-      label: "Children educated",
-      description: "Environmental education programs"
+      icon: <Globe className="w-8 h-8" />,
+      number: "293",
+      label: "Women trained",
+      description: "Trained in climate-smart agriculture"
+    },
+    {
+      icon: <Leaf className="w-8 h-8" />,
+      number: "5,600",
+      label: "Community members reached",
+      description: "Reached through 22 environmental protection and conservation sessions"
     }
   ];
 
@@ -119,17 +123,12 @@ const Donation = () => {
           >
             <Heart className="w-16 h-16 text-yellow-400 mx-auto mb-6 animate-pulse" />
             <h1 className="mb-6 text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
-              Make a <span className="text-yellow-400">Difference</span> Today
+              Support the Project
             </h1>
             <p className="mb-8 text-lg text-green-100 sm:text-xl">
-              Your donation helps us plant trees, educate children, and create sustainable
-              communities in Kakuma Refugee Camp. Every contribution counts.
+              Your donation supports tree planting, climate-smart agriculture training,
+              and community awareness on environmental protection in Kakuma.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-green-200 sm:text-base">
-              <span className="inline-flex items-center gap-2"><CheckCircle className="h-5 w-5 shrink-0" />100% of donations go to programs</span>
-              <span className="inline-flex items-center gap-2"><CheckCircle className="h-5 w-5 shrink-0" />Tax-deductible</span>
-              <span className="inline-flex items-center gap-2"><CheckCircle className="h-5 w-5 shrink-0" />UN Partner Organization</span>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -139,14 +138,14 @@ const Donation = () => {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Your Impact in Numbers
+              Project Results in Kakuma
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              See how your donation transforms lives and restores the environment
+              Current project results in Kakuma
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {impactStats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -319,37 +318,6 @@ const Donation = () => {
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="py-16 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Trusted by Thousands
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Join our community of donors who are making a real difference
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <Award className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">UN Partnership</h3>
-              <p className="text-gray-600">Official partner of UN Environment Programme</p>
-            </div>
-            <div className="text-center">
-              <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">95% to Programs</h3>
-              <p className="text-gray-600">Only 5% goes to administration and fundraising</p>
-            </div>
-            <div className="text-center">
-              <Users className="w-12 h-12 text-blue-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Community Impact</h3>
-              <p className="text-gray-600">Direct support to refugee and host communities</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

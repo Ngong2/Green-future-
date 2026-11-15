@@ -4,7 +4,6 @@ import {
   Mail, 
   Phone, 
   MapPin, 
-  Heart,
   Leaf
 } from 'lucide-react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
@@ -44,11 +43,10 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold text-white mb-4">Green Future</h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Sustainability Initiative
+              Sustainability Project
             </p>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Driving sustainable change through environmental action, education, and community empowerment.
-              Together, we're building a healthier future for all.
+              Tree planting, climate-smart agriculture, and environmental awareness in Kakuma.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -160,10 +158,10 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              © {currentYear} Green Future and Sustainability Initiative. All rights reserved.
+              © {currentYear} Green Future and Sustainability Project. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm flex items-center mt-4 md:mt-0">
-              Made with <Heart className="w-4 h-4 text-red-500 mx-1" /> for a greener future
+              Kakuma, Turkana County, Kenya
             </p>
           </div>
         </div>

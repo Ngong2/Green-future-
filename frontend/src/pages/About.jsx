@@ -13,13 +13,11 @@ import {
 } from 'lucide-react';
 
 const About = () => {
-  const milestones = [
-    { year: '2018', title: 'Project Founded', description: 'Started with 100 trees planted by 20 volunteers' },
-    { year: '2019', title: 'First Nursery', description: 'Established first tree nursery producing 5,000 seedlings' },
-    { year: '2020', title: 'Education Program', description: 'Launched environmental education in 5 schools' },
-    { year: '2021', title: '10,000 Trees', description: 'Reached 10,000 trees planted milestone' },
-    { year: '2022', title: 'UN Partnership', description: 'Became UN Environment Programme partner' },
-    { year: '2023', title: 'Community Gardens', description: 'Established 50 community gardens' },
+  const projectFacts = [
+    { value: 'December 2024', title: 'Project Founded', description: 'Green Future and Sustainability Project was founded.' },
+    { value: '4,700', title: 'Trees Planted', description: 'Trees planted through project activities in Kakuma.' },
+    { value: '293', title: 'Women Trained', description: 'Women trained in climate-smart agriculture.' },
+    { value: '22 sessions', title: 'Environmental Awareness', description: 'Sessions on environmental protection and conservation reached 5,600 community members.' },
   ];
 
   const team = [
@@ -27,31 +25,31 @@ const About = () => {
       name: 'Aman Garang',
       role: 'Chairman',
       image: '/images/Aman Garang.jpg',
-      bio: 'Provides strategic leadership, oversees organizational activities, and guides the initiative toward achieving its mission and vision.',
+      bio: 'Leads the organization and oversees its activities.',
     },
     {
       name: 'Agot Gut',
       role: 'Vice Chairperson',
       image: '/images/Agot Agut.png',
-      bio: 'Supports the Chairman, coordinates leadership activities, and assists in overseeing organizational programs.',
+      bio: 'Supports the chairperson and helps coordinate project activities.',
     },
     {
       name: 'Habiad Ayubi',
       role: 'Secretary',
       image: '/images/Habiab ayubi.png',
-      bio: 'Manages official records, meeting minutes, organizational communication, and administrative documentation.',
+      bio: 'Maintains meeting minutes, official records, and organizational correspondence.',
     },
     {
       name: 'Magai Ariik',
       role: 'Treasurer',
       image: '/images/Magai Ariik (1).png',
-      bio: 'Oversees financial records, budgeting, financial accountability, and responsible management of organizational resources.',
+      bio: 'Maintains financial records and oversees budgeting.',
     },
     {
       name: 'Ngong Kuot',
       role: 'ICT and Communications Officer',
       image: '/images/Ngong Kuot.png',
-      bio: 'Leads digital communications, website management, technology development, online visibility, and digital awareness initiatives.',
+      bio: 'Manages the website, digital communications, and online awareness.',
     },
   ];
 
@@ -72,15 +70,11 @@ const About = () => {
             className="max-w-3xl"
           >
             <h1 className="mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
-              Our Story of{' '}
-              <span className="bg-linear-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent">
-                Hope & Growth
-              </span>
+              About Green Future and Sustainability Project
             </h1>
             <p className="text-lg leading-relaxed text-gray-200 sm:text-xl">
-              Since 2018, we've been on a mission to transform Kakuma Refugee Camp through 
-              reforestation, environmental education, and community empowerment. What started 
-              as a small initiative has grown into a movement that's changing lives and landscapes.
+              Founded in December 2024, Green Future and Sustainability Project works in Kakuma
+              on tree planting, climate-smart agriculture, and environmental protection.
             </p>
           </motion.div>
         </div>
@@ -99,8 +93,8 @@ const About = () => {
               <Target className="w-16 h-16 text-green-600 mb-6" />
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                To restore degraded land in Kakuma Refugee Camp through sustainable reforestation, 
-                while empowering refugees with environmental knowledge and skills for a greener future.
+                We plant trees, train women in climate-smart agriculture, and share information
+                about environmental protection and conservation with communities in Kakuma.
               </p>
             </motion.div>
 
@@ -113,8 +107,7 @@ const About = () => {
               <Globe className="w-16 h-16 text-blue-600 mb-6" />
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Vision</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                A green and sustainable Kakuma where refugees and host communities thrive together 
-                in harmony with nature, leading the way in environmental stewardship.
+                Communities in Kakuma have the knowledge and resources to care for their environment.
               </p>
             </motion.div>
           </div>
@@ -167,7 +160,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Project facts */}
       <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
@@ -176,7 +169,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               className="text-green-600 font-semibold tracking-wider uppercase"
             >
-              Our Journey
+              Project Facts
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -184,42 +177,24 @@ const About = () => {
               transition={{ delay: 0.2 }}
               className="text-4xl md:text-5xl font-bold text-gray-900 mt-4"
             >
-              Key Milestones
+              Our Work So Far
             </motion.h2>
           </div>
 
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-green-200 hidden lg:block"></div>
-
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className={`flex flex-col lg:flex-row items-center ${
-                    index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                  }`}
-                >
-                  <div className={`lg:w-1/2 ${index % 2 === 0 ? 'lg:text-right lg:pr-12' : 'lg:pl-12'}`}>
-                    <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all">
-                      <span className="text-3xl font-bold text-green-600 mb-2 block">{milestone.year}</span>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
-                      <p className="text-gray-600">{milestone.description}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Center Dot */}
-                  <div className="hidden lg:flex lg:w-12 lg:h-12 bg-green-600 rounded-full items-center justify-center text-white font-bold relative z-10">
-                    {index + 1}
-                  </div>
-                  
-                  <div className="lg:w-1/2"></div>
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {projectFacts.map((fact, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="rounded-2xl border border-green-100 bg-green-50 p-6 text-center shadow-sm"
+              >
+                <span className="mb-2 block text-3xl font-bold text-green-700">{fact.value}</span>
+                <h3 className="mb-2 text-xl font-bold text-gray-900">{fact.title}</h3>
+                <p className="text-gray-600">{fact.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -233,7 +208,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               className="text-green-600 font-semibold tracking-wider uppercase"
             >
-              Green Future and Sustainability Initiative
+              Green Future and Sustainability Project
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -244,9 +219,8 @@ const About = () => {
               Our Team
             </motion.h2>
             <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-gray-600">
-              Our team is made up of dedicated leaders committed to environmental protection,
-              climate action, community development, and a sustainable future. Together, we
-              work to empower communities and inspire positive environmental change.
+              The project is led by a team responsible for leadership, administration, finances,
+              communications, and coordinating project activities.
             </p>
           </div>
 
@@ -274,13 +248,6 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-          <p className="mt-12 text-center text-2xl font-bold text-green-800">
-            Together, We Grow a Greener Future!
-          </p>
-          <p className="mx-auto mt-3 max-w-3xl text-center leading-relaxed text-gray-600">
-            We believe that strong leadership, teamwork, and community participation are essential
-            to building a sustainable environment for future generations.
-          </p>
         </div>
       </section>
 
@@ -294,10 +261,10 @@ const About = () => {
           >
             <Sprout className="w-20 h-20 mx-auto mb-8 text-green-300" />
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Be Part of Our Story
+              Support Project Activities
             </h2>
             <p className="text-xl text-gray-200 mb-10">
-              Join us in writing the next chapter of hope and transformation in Kakuma.
+              Contact us to ask about volunteering, partnerships, or supporting the project in Kakuma.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link

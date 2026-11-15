@@ -7,12 +7,10 @@ import {
   Globe, 
   Heart, 
   Leaf, 
-  Droplets, 
   ArrowRight,
   ChevronLeft,
   ChevronRight,
   Sprout,
-  Award,
   Sun,
   BookOpen
 } from 'lucide-react';
@@ -24,38 +22,30 @@ const Home = () => {
   const [featuredPosts, setFeaturedPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
-  const [stats, setStats] = useState({
-    trees: 15000,
-    volunteers: 500,
-    acres: 25,
-    families: 2000
-  });
-
-  // Hero Images
   const heroImages = [
     {
       url: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      title: "Greening the Desert",
-      subtitle: "One Tree at a Time",
-      description: "Transforming Kakuma Refugee Camp through reforestation and hope"
+      title: "Tree Planting in Kakuma",
+      subtitle: "4,700 trees planted",
+      description: "The project has planted 4,700 trees in Kakuma."
     },
     {
       url: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      title: "Growing Hope",
-      subtitle: "Building a Sustainable Future",
-      description: "Empowering communities through environmental action"
+      title: "Climate-Smart Agriculture",
+      subtitle: "293 women trained",
+      description: "Women have been trained in climate-smart agriculture."
     },
     {
       url: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      title: "Community-Led Change",
-      subtitle: "Together We Thrive",
-      description: "Refugees and host communities working hand in hand"
+      title: "Environmental Awareness",
+      subtitle: "22 community sessions",
+      description: "Sessions on environmental protection and conservation reached 5,600 community members."
     },
     {
       url: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      title: "Climate Action",
-      subtitle: "Local Solutions, Global Impact",
-      description: "Combating climate change from the ground up"
+      title: "Community Volunteers",
+      subtitle: "17 volunteers",
+      description: "Volunteers support the project's environmental activities in Kakuma."
     }
   ];
 
@@ -63,87 +53,75 @@ const Home = () => {
   const impactCards = [
     {
       icon: <TreePine className="w-12 h-12" />,
-      number: "15,000+",
+      number: "4,700",
       label: "Trees Planted",
       color: "from-green-500 to-green-700",
-      description: "Native species restoring biodiversity"
+      description: "Trees planted through project activities"
     },
     {
       icon: <Users className="w-12 h-12" />,
-      number: "500+",
-      label: "Active Volunteers",
+      number: "17",
+      label: "Volunteers",
       color: "from-blue-500 to-blue-700",
-      description: "Community members leading change"
+      description: "People volunteering with the project"
     },
     {
       icon: <Globe className="w-12 h-12" />,
-      number: "25",
-      label: "Acres Restored",
+      number: "293",
+      label: "Women Trained",
       color: "from-amber-600 to-amber-800",
-      description: "Land transformed into green spaces"
+      description: "Trained in climate-smart agriculture"
     },
     {
       icon: <Heart className="w-12 h-12" />,
-      number: "2,000+",
-      label: "Families Impacted",
+      number: "5,600",
+      label: "Community Members Reached",
       color: "from-red-500 to-red-700",
-      description: "Direct beneficiaries of our programs"
+      description: "Reached through 22 environmental protection and conservation sessions"
     }
   ];
 
-  // Flip Cards Data - Updated with English text from user
   const flipCards = [
     {
       frontImage: "https://images.unsplash.com/photo-1523349312806-f5dde0a01c32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       frontTitle: "Tree Planting",
       backTitle: "Reforestation Initiative",
-      backDescription: "We plant drought-resistant native trees that provide shade, improve soil quality, and create sustainable ecosystems in the camp.",
+      backDescription: "The project has planted 4,700 trees in Kakuma.",
       backIcon: <Sprout className="w-16 h-16" />,
-      stats: "10,000+ Trees",
+      stats: "4,700 trees planted",
       buttonText: "Learn More"
     },
     {
       frontImage: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      frontTitle: "Environmental Education",
-      backTitle: "Learning for Sustainability",
-      backDescription: "Teaching children and adults about environmental conservation, sustainable practices, and the importance of trees.",
+      frontTitle: "Climate-Smart Agriculture",
+      backTitle: "Women's Training",
+      backDescription: "293 women have been trained in climate-smart agriculture.",
       backIcon: <BookOpen className="w-16 h-16" />,
-      stats: "1,500+ Students",
+      stats: "293 women trained",
       buttonText: "Learn More"
     },
     {
       frontImage: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      frontTitle: "Community Gardens",
-      backTitle: "Food Security",
-      backDescription: "Establishing community gardens that provide fresh produce, nutrition, and income for refugee families.",
+      frontTitle: "Environmental Awareness",
+      backTitle: "Community Sessions",
+      backDescription: "22 sessions on environmental protection and conservation reached 5,600 community members.",
       backIcon: <Sun className="w-16 h-16" />,
-      stats: "50+ Gardens",
+      stats: "22 sessions · 5,600 reached",
       buttonText: "Learn More"
     },
     {
       frontImage: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      frontTitle: "Nursery Development",
-      backTitle: "Growing Future Forests",
-      backDescription: "Operating tree nurseries that grow thousands of seedlings annually for ongoing reforestation efforts.",
-      backIcon: <Droplets className="w-16 h-16" />,
-      stats: "5 Nurseries",
+      frontTitle: "Community Volunteers",
+      backTitle: "Volunteer Team",
+      backDescription: "17 volunteers support the project's environmental activities in Kakuma.",
+      backIcon: <Users className="w-16 h-16" />,
+      stats: "17 volunteers",
       buttonText: "Learn More"
     }
   ];
 
   useEffect(() => {
     fetchFeaturedPosts();
-    // Simulate growing stats animation
-    const interval = setInterval(() => {
-      setStats(prev => ({
-        trees: prev.trees + Math.floor(Math.random() * 10),
-        volunteers: prev.volunteers + Math.floor(Math.random() * 2),
-        acres: prev.acres + 0.1,
-        families: prev.families + Math.floor(Math.random() * 5)
-      }));
-    }, 5000);
-
-    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -206,29 +184,37 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="max-w-4xl"
             >
-              {/* Animated Badge */}
+              {/* Project identity */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold tracking-wide text-white backdrop-blur-md sm:mb-6 sm:text-base"
+              >
+                <Leaf className="h-5 w-5 text-green-300" aria-hidden="true" />
+                Green Future and Sustainability Project
+              </motion.div>
+
               {/* Main Title */}
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="mb-5 break-words text-4xl font-bold leading-tight text-white sm:text-5xl md:mb-6 md:text-6xl lg:text-7xl"
+                transition={{ delay: 0.35 }}
+                className="mb-3 break-words text-5xl font-bold leading-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
               >
-                <span className="bg-linear-to-r from-green-400 to-yellow-400 bg-clip-text text-transparent">
-                  Green Future
+                <span className="bg-linear-to-r from-green-300 via-lime-200 to-yellow-200 bg-clip-text text-transparent">
+                  {heroImages[currentHeroIndex].title}
                 </span>
-                <br />
-                <span className="text-white/95">Sustainability Initiative</span>
               </motion.h1>
 
               {/* Subtitle */}
               <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="mb-4 text-2xl font-light text-white sm:text-3xl md:text-4xl"
+                transition={{ delay: 0.55 }}
+                className="mb-4 text-xl font-semibold text-white sm:text-2xl md:text-3xl"
               >
-                {heroImages[currentHeroIndex].title}
+                {heroImages[currentHeroIndex].subtitle}
               </motion.h2>
 
               {/* Description */}
@@ -264,29 +250,19 @@ const Home = () => {
                 </Link>
               </motion.div>
 
-              {/* Live Stats Strip */}
+              {/* Project results */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2 }}
                 className="mt-8 grid max-w-3xl grid-cols-2 gap-2 sm:mt-12 sm:gap-4 md:grid-cols-4"
               >
-                <div className="rounded-lg border border-white/20 bg-white/10 p-2 text-center backdrop-blur-md sm:p-4">
-                  <div className="text-xl font-bold text-green-400 sm:text-3xl">{stats.trees.toLocaleString()}</div>
-                  <div className="text-xs text-gray-200 sm:text-sm">Trees Planted</div>
-                </div>
-                <div className="rounded-lg border border-white/20 bg-white/10 p-2 text-center backdrop-blur-md sm:p-4">
-                  <div className="text-xl font-bold text-green-400 sm:text-3xl">{stats.volunteers}+</div>
-                  <div className="text-xs text-gray-200 sm:text-sm">Volunteers</div>
-                </div>
-                <div className="rounded-lg border border-white/20 bg-white/10 p-2 text-center backdrop-blur-md sm:p-4">
-                  <div className="text-xl font-bold text-green-400 sm:text-3xl">{stats.acres.toFixed(1)}</div>
-                  <div className="text-xs text-gray-200 sm:text-sm">Acres Restored</div>
-                </div>
-                <div className="rounded-lg border border-white/20 bg-white/10 p-2 text-center backdrop-blur-md sm:p-4">
-                  <div className="text-xl font-bold text-green-400 sm:text-3xl">{stats.families.toLocaleString()}</div>
-                  <div className="text-xs text-gray-200 sm:text-sm">Families Impacted</div>
-                </div>
+                {impactCards.map((card) => (
+                  <div key={card.label} className="rounded-lg border border-white/20 bg-white/10 p-2 text-center backdrop-blur-md sm:p-4">
+                    <div className="text-xl font-bold text-green-400 sm:text-3xl">{card.number}</div>
+                    <div className="text-xs text-gray-200 sm:text-sm">{card.label}</div>
+                  </div>
+                ))}
               </motion.div>
             </motion.div>
           </div>
@@ -349,7 +325,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="text-green-600 font-semibold tracking-wider uppercase"
             >
-              Our Impact
+              Project Results
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -357,7 +333,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6"
             >
-              Making a Difference, <span className="bg-linear-to-r from-green-600 to-amber-600 bg-clip-text text-transparent">Together</span>
+              Our Results in Kakuma
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -365,8 +341,8 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              Through collective action and community engagement, we're transforming 
-              Kakuma Refugee Camp into a greener, more sustainable home for thousands.
+              Our work in Kakuma includes tree planting, climate-smart agriculture training,
+              and community awareness on environmental protection.
             </motion.p>
           </div>
 
@@ -407,7 +383,7 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               className="text-green-600 font-semibold tracking-wider uppercase"
             >
-              Our Initiatives
+              What We Do
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -415,7 +391,7 @@ const Home = () => {
               transition={{ delay: 0.2 }}
               className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6"
             >
-              Our Impact <span className="bg-linear-to-r from-green-600 to-amber-600 bg-clip-text text-transparent">Initiatives</span>
+              Project Activities
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -423,7 +399,7 @@ const Home = () => {
               transition={{ delay: 0.3 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              Discover how we're creating sustainable change through these key programs
+              Tree planting, climate-smart agriculture training, and environmental awareness in Kakuma
             </motion.p>
           </div>
 
@@ -580,11 +556,11 @@ const Home = () => {
           >
             <Leaf className="w-20 h-20 text-green-400 mx-auto mb-8 animate-bounce" />
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Join Us in Greening Kakuma
+              Support Our Work
             </h2>
             <p className="text-xl text-gray-200 mb-10">
-              Your support can help us plant more trees, educate more children, 
-              and create a sustainable future for thousands of refugees.
+              Your support helps us continue tree planting, climate-smart agriculture training,
+              and community awareness on environmental protection in Kakuma.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
@@ -603,21 +579,6 @@ const Home = () => {
               </Link>
             </div>
 
-            {/* Trust Badges */}
-            <div className="mt-16 flex flex-wrap justify-center gap-8">
-              <div className="flex items-center text-gray-300">
-                <Award className="w-6 h-6 mr-2 text-yellow-400" />
-                <span>UN Partner</span>
-              </div>
-              <div className="flex items-center text-gray-300">
-                <Award className="w-6 h-6 mr-2 text-yellow-400" />
-                <span>501(c)(3) Nonprofit</span>
-              </div>
-              <div className="flex items-center text-gray-300">
-                <Award className="w-6 h-6 mr-2 text-yellow-400" />
-                <span>95% to Programs</span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>

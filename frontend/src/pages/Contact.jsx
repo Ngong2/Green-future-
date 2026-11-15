@@ -96,9 +96,8 @@ const Contact = () => {
               Get in Touch
             </h1>
             <p className="text-lg md:text-xl text-gray-100 leading-relaxed max-w-2xl mx-auto">
-              Join our mission to restore nature in Kakuma. We welcome
-              volunteers, partners, and supporters who believe in building
-              a greener and more sustainable future.
+              Contact us to ask about volunteering, partnerships, or supporting tree planting,
+              climate-smart agriculture, and environmental awareness activities in Kakuma.
             </p>
           </motion.div>
         </div>

@@ -87,7 +87,7 @@ const Navbar = () => {
           >
             <img
               src="/images/logo.png"
-              alt="Green Future and Sustainability Initiative"
+              alt="Green Future and Sustainability Project"
               className="h-12 w-auto object-contain bg-transparent sm:h-14 lg:h-16"
             />
           </Link>
