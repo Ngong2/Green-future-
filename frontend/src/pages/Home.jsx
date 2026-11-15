@@ -184,46 +184,38 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="max-w-4xl"
             >
-              {/* Project identity */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold tracking-wide text-white backdrop-blur-md sm:mb-6 sm:text-base"
-              >
-                <Leaf className="h-5 w-5 text-green-300" aria-hidden="true" />
-                Green Future and Sustainability Project
-              </motion.div>
-
               {/* Main Title */}
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35 }}
-                className="mb-3 break-words text-5xl font-bold leading-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
+                transition={{ delay: 0.2 }}
+                className="mb-5 break-words text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
               >
                 <span className="bg-linear-to-r from-green-300 via-lime-200 to-yellow-200 bg-clip-text text-transparent">
-                  {heroImages[currentHeroIndex].title}
+                  Green Future and Sustainability Project
                 </span>
               </motion.h1>
 
-              {/* Subtitle */}
+              {/* Featured project activity */}
               <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.55 }}
-                className="mb-4 text-xl font-semibold text-white sm:text-2xl md:text-3xl"
+                transition={{ delay: 0.4 }}
+                className="mb-2 text-2xl font-semibold text-white sm:text-3xl md:text-4xl"
               >
-                {heroImages[currentHeroIndex].subtitle}
+                {heroImages[currentHeroIndex].title}
               </motion.h2>
 
               {/* Description */}
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
+                transition={{ delay: 0.55 }}
                 className="mb-7 max-w-2xl text-base text-gray-200 sm:mb-10 sm:text-xl"
               >
+                <span className="mb-1 block font-semibold text-green-200">
+                  {heroImages[currentHeroIndex].subtitle}
+                </span>
                 {heroImages[currentHeroIndex].description}
               </motion.p>
 
@@ -231,7 +223,7 @@ const Home = () => {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.0 }}
+                transition={{ delay: 0.7 }}
                 className="flex flex-wrap gap-4"
               >
                 <Link
@@ -254,7 +246,7 @@ const Home = () => {
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 }}
+                transition={{ delay: 0.9 }}
                 className="mt-8 grid max-w-3xl grid-cols-2 gap-2 sm:mt-12 sm:gap-4 md:grid-cols-4"
               >
                 {impactCards.map((card) => (
