@@ -5,12 +5,9 @@ import {
   Phone,
   MapPin,
   Send,
-  Clock,
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube
+  Clock
 } from 'lucide-react';
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 
 const Contact = () => {
@@ -250,7 +247,7 @@ const Contact = () => {
                 </p>
 
                 <div className="mb-8 flex flex-wrap gap-3 sm:gap-4">
-                  {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (
+                  {[FaFacebookF, FaTwitter, FaInstagram, FaYoutube].map((Icon, i) => (
                     <div
                       key={i}
                       className="bg-white/10 hover:bg-white/20 transition p-3 rounded-lg cursor-pointer"

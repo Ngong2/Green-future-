@@ -4,13 +4,10 @@ import {
   Mail, 
   Phone, 
   MapPin, 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Youtube,
   Heart,
   Leaf
 } from 'lucide-react';
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,10 +29,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, url: 'https://facebook.com', label: 'Facebook' },
-    { icon: <Twitter className="w-5 h-5" />, url: 'https://twitter.com', label: 'Twitter' },
-    { icon: <Instagram className="w-5 h-5" />, url: 'https://instagram.com', label: 'Instagram' },
-    { icon: <Youtube className="w-5 h-5" />, url: 'https://youtube.com', label: 'YouTube' },
+    { icon: <FaFacebookF className="w-5 h-5" />, url: 'https://facebook.com', label: 'Facebook' },
+    { icon: <FaTwitter className="w-5 h-5" />, url: 'https://twitter.com', label: 'Twitter' },
+    { icon: <FaInstagram className="w-5 h-5" />, url: 'https://instagram.com', label: 'Instagram' },
+    { icon: <FaYoutube className="w-5 h-5" />, url: 'https://youtube.com', label: 'YouTube' },
   ];
 
   return (
