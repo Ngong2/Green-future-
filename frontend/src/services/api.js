@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_URL = (import.meta.env.VITE_API_URL || 'https://green-future-uq95.onrender.com/api').replace(/\/+$/, '');
+const configuredApiUrl = (import.meta.env.VITE_API_URL || 'https://green-future-uq95.onrender.com/api').replace(/\/+$/, '');
+const API_URL = /\/api$/i.test(configuredApiUrl)
+  ? configuredApiUrl.replace(/\/api$/i, '/api')
+  : `${configuredApiUrl}/api`;
 export const API_ORIGIN = API_URL.replace(/\/api$/, '');
 
 // Create axios instance
