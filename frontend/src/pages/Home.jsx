@@ -52,28 +52,32 @@ const Home = () => {
   // Impact Cards Data
   const impactCards = [
     {
-      icon: <TreePine className="w-12 h-12" />,
+      image: "/images/Trees Planted young.jpg",
+      imageAlt: "A Kakuma community member watering a newly planted tree",
       number: "4,700",
       label: "Trees Planted",
       color: "from-green-500 to-green-700",
       description: "Trees planted through project activities"
     },
     {
-      icon: <Users className="w-12 h-12" />,
+      image: "/images/vounteer.jpg",
+      imageAlt: "Volunteers working together in a tree nursery",
       number: "17",
       label: "Volunteers",
       color: "from-blue-500 to-blue-700",
       description: "People volunteering with the project"
     },
     {
-      icon: <Globe className="w-12 h-12" />,
+      image: "/images/wowan.jpg",
+      imageAlt: "A woman watering crops in a community garden",
       number: "293",
       label: "Women Trained",
       color: "from-amber-600 to-amber-800",
       description: "Trained in climate-smart agriculture"
     },
     {
-      icon: <Heart className="w-12 h-12" />,
+      image: "/images/community member.jpg",
+      imageAlt: "Community members tending crops in a garden",
       number: "5,600",
       label: "Community Members Reached",
       color: "from-red-500 to-red-700",
@@ -347,14 +351,19 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -10 }}
-                  className="bg-white rounded-2xl shadow-xl p-8 text-center hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                  className="overflow-hidden rounded-2xl border border-gray-100 bg-white text-center shadow-xl transition-all duration-300 hover:shadow-2xl"
                 >
-                  <div className={`inline-flex p-4 rounded-2xl bg-linear-to-br ${card.color} text-white mb-6`}>
-                    {card.icon}
+                  <img
+                    src={card.image}
+                    alt={card.imageAlt}
+                    loading="lazy"
+                    className="h-52 w-full object-cover"
+                  />
+                  <div className="p-6 sm:p-8">
+                    <h3 className="mb-2 text-4xl font-bold text-gray-900">{card.number}</h3>
+                    <p className="mb-2 text-xl font-semibold text-gray-700">{card.label}</p>
+                    <p className="text-gray-500">{card.description}</p>
                   </div>
-                  <h3 className="text-4xl font-bold text-gray-900 mb-2">{card.number}</h3>
-                  <p className="text-xl font-semibold text-gray-700 mb-2">{card.label}</p>
-                  <p className="text-gray-500">{card.description}</p>
                 </motion.div>
               ))
             ) : (
