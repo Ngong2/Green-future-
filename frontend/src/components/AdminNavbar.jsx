@@ -12,7 +12,7 @@ const AdminNavbar = () => {
   const handleLogout = () => {
     setIsOpen(false);
     logout();
-    navigate('/admin', { replace: true });
+    navigate('/', { replace: true });
   };
 
   const links = [
