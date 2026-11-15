@@ -14,8 +14,18 @@ const postRoutes = require('./routes/post.routes');
 const app = express();
 
 // Middleware
+const allowedOrigins = new Set([
+  'https://green-future-iota.vercel.app',
+  ...(process.env.CLIENT_URL || 'http://localhost:5173')
+    .split(',')
+    .map(origin => origin.trim())
+    .filter(Boolean)
+]);
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    callback(null, !origin || allowedOrigins.has(origin));
+  },
   credentials: true
 }));
 app.use(express.json());
